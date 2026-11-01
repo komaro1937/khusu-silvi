@@ -1,2 +1,2 @@
-# khusu-silvi
+# khusus-silvi
 untuk orang special bagi gw
