@@ -10,7 +10,7 @@
         #hero-section {
             position: relative;
             height: 75vh;
-            background-image: url('/img/horor-hero.jpg');
+            background-image: url('img/horor-hero.jpg');
             background-size: cover;
             background-position: center;
             display: flex;
