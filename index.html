@@ -12,18 +12,21 @@
         <div class="logo">Bcinema</div>
     </header>
 
+    <!-- ELEMEN 1: Latar Belakang Hero (Atribut Style yang akan diubah) -->
     <section id="hero-section">
         <div class="hero-overlay"></div>
         <div class="hero-content">
+            <!-- ELEMEN 2: Judul dan Deskripsi (Konten innerHTML yang akan diubah) -->
             <h1 id="hero-title" class="hero-title">DOLLHOME</h1>
             <p id="hero-desc" class="hero-desc">Di balik rumah yang indah, teror psikologis mengintai saat batas antara keluarga sungguhan dan boneka porselen hidup mulai menghilang.</p>
             
             <div class="hero-buttons">
-                <!-- Tombol Putar ini yang benar memicu modal pesan kejutan -->
-                <button class="btn btn-play" onclick='document.getElementById("kejutan-modal").style.display = "flex"'>
+                <!-- ELEMEN 3: Tombol Play (Mengubah display untuk menampilkan trailer) -->
+                <button class="btn btn-play" onclick='document.getElementById("trailer-modal").style.display = "flex"'>
                     ▶ Putar
                 </button>
                 
+                <!-- ELEMEN 4: Tombol Info (Mengubah warna teks/Style) -->
                 <button class="btn btn-info" onclick='document.getElementById("hero-desc").style.color = "#e50914"'>
                     ⓘ Selengkapnya
                 </button>
@@ -34,121 +37,53 @@
     <section class="movie-row">
         <h2>Rekomendasi Untukmu</h2>
         <div class="thumbnails">
-            <img src="img/horor-card.jpg" alt="Horor" 
+            <!-- 
+                MENGUBAH ATRIBUT & KONTEN: 
+                Saat gambar ini diklik, JavaScript mengganti background, judul, dan sinopsis di bagian Hero atas.
+            -->
+            <img src="/img/horor-card.jpg" alt="Horor" 
                  onclick='
                  document.getElementById("hero-title").innerHTML = "DOLLHOME"; 
                  document.getElementById("hero-desc").innerHTML = "Di balik rumah yang indah, teror psikologis mengintai saat batas antara keluarga sungguhan dan boneka porselen hidup mulai menghilang.";
-                 document.getElementById("hero-section").style.backgroundImage = "url(img/horor-hero.jpg)";
+                 document.getElementById("hero-section").style.backgroundImage = "url(/img/horor-hero.jpg)";
                  document.getElementById("hero-desc").style.color = "white";'>
 
-            <img src="img/sfci-card.jpg" alt="Sci-Fi" 
+            <img src="/img/sfci-card.jpg" alt="Sci-Fi" 
                  onclick='
                  document.getElementById("hero-title").innerHTML = "INTERTELLAHAR"; 
                  document.getElementById("hero-desc").innerHTML = "Bumi di ambang kehancuran. Misi melintasi lubang lahar menjadi harapan terakhir sekaligus ujian terbesar umat manusia di galaksi kota Bekasi.";
-                 document.getElementById("hero-section").style.backgroundImage = "url(img/sfci-hero.jpg)";
+                 document.getElementById("hero-section").style.backgroundImage = "url(/img/sfci-hero.jpg)";
                  document.getElementById("hero-desc").style.color = "white";'>
 
-            <img src="img/card.jpg" alt="Komedi" 
+            <img src="/img/card.jpg" alt="Komedi" 
                  onclick='
                  document.getElementById("hero-title").innerHTML = "Bentar lu siapa dah?"; 
                  document.getElementById("hero-desc").innerHTML = "Bangun-bangun beda tubuh! Ridho dan Reza harus menghadapi kekacauan pertukaran tubuh, komet nyasar, dan ingatan yang ambyar dalam komedi supranatural yang absurd.";
-                 document.getElementById("hero-section").style.backgroundImage = "url(img/hero.jpg)";
+                 document.getElementById("hero-section").style.backgroundImage = "url(/img/hero.jpg)";
                  document.getElementById("hero-desc").style.color = "white";'>
                  
-            <img src="img/action-card.jpg" alt="Aksi" 
+            <img src="/img/action-card.jpg" alt="Aksi" 
                  onclick='
                  document.getElementById("hero-title").innerHTML = "Ojan Wick 2"; 
                  document.getElementById("hero-desc").innerHTML = "Terkepung puluhan senjata tanpa jalan keluar. Sang legenda pembunuh bayaran dipaksa kembali untuk menghabisi mereka semua, akankah Ojan di bayar.";
-                 document.getElementById("hero-section").style.backgroundImage = "url(img/action-hero.jpg)";
+                 document.getElementById("hero-section").style.backgroundImage = "url(/img/action-hero.jpg)";
                  document.getElementById("hero-desc").style.color = "white";'>
-                 
-            <img src="img/romance-card.jpg" alt="Romantis"
+            <img src="/img/romance-card.jpg" alt="Romantis"
                   onclick='
                   document.getElementById("hero-title").innerHTML = "Falling into your smile";
                   document.getElementById("hero-desc").innerHTML = "Cinta, ketulusan, dan perjuangan. Dua hati saling menguatkan hingga akhirnya jatuh cinta pada sebuah senyuman.";
-                  document.getElementById("hero-section").style.backgroundImage = "url(img/romance-hero.jpg)";
+                  document.getElementById("hero-section").style.backgroundImage = "url(/img/romance-hero.jpg)";
                   document.getElementById("hero-desc").style.color = "white";'>
         </div>
     </section>
 
-     <!-- Modal Kejutan untuk Silvi -->
-    <div id="kejutan-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 100; flex-direction: column; align-items: center; justify-content: center; overflow: hidden;">
-        <div class="pesan-box">
-            <span class="tutup-btn" onclick='document.getElementById("kejutan-modal").style.display = "none"'>&times;</span>
-            
-            <div class="heart" id="icon-hati">❤️</div>
-            <div class="match-text">100% Match</div>
-            <h2 id="judul-pesan">Hai, Silvi Nur Aini</h2>
-            
-            <p id="isi-pesan">Sebenarnya gw bikin web ini bukan cuma buat tugas aja. Dari sekian banyak baris kode yang gw tulis, cuma lu yang terus ada di pikiran gw.<br><br>Silvi, mau nggak lu jadi orang yang spesial buat gw?</p>
-            
-            <!-- Kolom Jawaban -->
-            <div id="kolom-jawaban" style="display: flex; gap: 15px; justify-content: center; margin-top: 20px; align-items: center;">
-                <!-- Tombol IYA -->
-                <button id="btn-iya" class="btn btn-play" style="transition: all 0.4s ease; position: relative; z-index: 10;" onclick='terimaCinta()'>
-                    Iya, Mau
-                </button>
-                
-                <!-- Tombol TIDAK -->
-                <button id="btn-tidak" class="btn btn-info" onclick='tolakCinta()'>
-                    Nggak Dulu
-                </button>
-            </div>
-        </div>
+    <!-- Modal Trailer (Awalnya disembunyikan dengan display: none) -->
+    <div id="trailer-modal">
+        <!-- Mengubah display menjadi none untuk menyembunyikan trailer -->
+        <span class="close-btn" onclick='document.getElementById("trailer-modal").style.display = "none"'>&times;</span>
+        <!-- Dummy Video Trailer dari YouTube -->
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Trailer" allowfullscreen></iframe>
     </div>
-
-    <!-- Script Logika Kejutan -->
-    <script>
-        // Variabel untuk melacak jumlah klik dan ukuran tombol
-        let ukuranTombolIya = 1;
-        let klikTolak = 0;
-
-        function tolakCinta() {
-            klikTolak++;
-            ukuranTombolIya += 0.7; // Tombol IYA membesar setiap kali tombol TIDAK diklik
-            
-            let btnIya = document.getElementById("btn-iya");
-            let btnTidak = document.getElementById("btn-tidak");
-            let isiPesan = document.getElementById("isi-pesan");
-
-            // Terapkan pembesaran ukuran ke tombol Iya
-            btnIya.style.transform = "scale(" + ukuranTombolIya + ")";
-            
-            // Ubah teks berdasarkan seberapa sering dia menolak
-            if (klikTolak === 1) {
-                btnTidak.innerHTML = "Yakin nolak? 😆";
-                isiPesan.innerHTML = "Waduh, masa ditolak? Coba pikir-pikir lagi deh, bendahara kelas kita yang manis... Tombol merahnya kelihatan lebih menarik tuh! 😁";
-            } else if (klikTolak === 2) {
-                btnTidak.innerHTML = "Beneran nih? 🥺";
-                isiPesan.innerHTML = "Sekali lagi deh, masa nggak mau ngasih kesempatan buat cowok yang udah capek-capek ngoding ini?";
-            } else if (klikTolak === 3) {
-                btnTidak.innerHTML = "Tega banget... 😭";
-            } else if (klikTolak >= 4) {
-                // Sembunyikan tombol tidak karena tombol Iya sudah terlalu besar
-                btnTidak.style.display = "none";
-                isiPesan.innerHTML = "Tuh kan, emang takdirnya cuma bisa klik 'Iya'. Ayo diklik tombol merahnya! 😂";
-            }
-        }
-
-        function terimaCinta() {
-            // Tampilan saat dia klik Iya
-            document.getElementById("judul-pesan").innerHTML = "Yeay! Terima Kasih Silvi! 🎉";
-            document.getElementById("isi-pesan").innerHTML = "Tunggu sebentar, pesan ini akan langsung terkirim ke WhatsApp aku...";
-            document.getElementById("kolom-jawaban").style.display = "none";
-            document.getElementById("icon-hati").style.animation = "heartbeat 0.2s infinite"; // Detak jantung dipercepat
-            
-            // Redirect otomatis ke WhatsApp setelah jeda 2.5 detik
-            setTimeout(function() {
-                // Ganti angka 628... di bawah ini dengan nomor WhatsApp-mu (gunakan 62 sebagai pengganti 0)
-                let nomorWA = "6285894876825"; 
-                let pesanWA = "Hai Ridho, aku udah lihat webnya. Jawabannya: Iya, aku mau! ❤️";
-                
-                // Membuka link WhatsApp
-                window.location.href = "https://wa.me/" + nomorWA + "?text=" + encodeURIComponent(pesanWA);
-            }, 2500); 
-        }
-    </script>
-
 
 </body>
 </html>
